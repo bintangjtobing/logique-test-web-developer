@@ -1,7 +1,7 @@
 ### Installation
 1. Clone the repository first
    ```sh
-   git clone https://github.com/Digital-Envision/mine-care
+   git clone https://github.com/bintangjtobing/logique-test-web-developer
    ```
 2. Install composer by run 
     ```sh
