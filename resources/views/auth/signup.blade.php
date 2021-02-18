@@ -13,7 +13,8 @@
 
 <body>
     <div class="wrapper">
-        <form action="" id="wizard">
+        <form action="/register" id="wizard">
+            {{ csrf_field() }}
             <!-- SECTION 1 -->
             <h2></h2>
             <section>

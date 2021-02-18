@@ -13,13 +13,19 @@
 
 <body>
     <div class="wrapper">
-        <form action="" id="wizard">
+        <form action="/login" method="POST">
+            {{ csrf_field() }}
             <!-- SECTION 1 -->
             <h2></h2>
             <section>
+                @if(session('gagal'))
+                <div class="alert" role="alert">
+                    {{session('gagal')}}
+                </div>
+                @endif
                 <div class="inner">
                     <div class="image-holder">
-                        <img src="{!!asset('authentication/images/form-wizard-1.jpg')!!}" alt="">
+                        <img src="{!!asset('authentication/images/form-wizard-1.jpg')!!}">
                     </div>
                     <div class="form-content">
                         <div class="form-header">
@@ -27,12 +33,16 @@
                         </div>
                         <div class="form-row">
                             <div class="form-holder">
-                                <input type="text" placeholder="First Name" class="form-control">
+                                <input type="text" name="email" placeholder="Email" class="form-control">
                             </div>
                             <div class="form-holder">
-                                <input type="text" placeholder="Last Name" class="form-control">
+                                <input type="password" name="pass" placeholder="Password" class="form-control">
                             </div>
                         </div>
+                        <button type="submit" class="button submitBtn">Login</button>
+                        <span>
+                            Doesn't have an account? <a href="/register">Register</a> here.
+                        </span>
                     </div>
                 </div>
             </section>

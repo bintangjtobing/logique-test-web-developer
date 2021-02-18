@@ -583,4 +583,24 @@ textarea.form-control {
     }
 }
 
-/*# sourceMappingURL=style.css.map */
+.submitBtn {
+    border: none;
+    height: 41px;
+    width: 135px;
+    align-items: center;
+    background: #e9e0cf;
+    font-family: "Multi-SemiBold";
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    padding-left: 28px;
+    padding: 0;
+}
+
+.alert {
+    padding: 10px 10px 10px 10px;
+    background: #d44f4f;
+    color: #fff;
+    border-radius: .25rem;
+    margin-bottom: .75rem;
+}
