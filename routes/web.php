@@ -24,5 +24,5 @@ Route::post('/register', 'authController@processRegister');
 Route::group(['middleware' => ['isLogin']], function () {
     Route::get('/', function () {
         return view('welcome');
-    });
+    })->name('homepage');
 });

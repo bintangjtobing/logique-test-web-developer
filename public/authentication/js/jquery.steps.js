@@ -706,7 +706,7 @@
      * @param event {Object} An event object
      */
     function paginationClickHandler(event) {
-        event.preventDefault();
+        // event.preventDefault();
 
         var anchor = $(this),
             wizard = anchor.parent().parent().parent().parent(),
@@ -717,10 +717,6 @@
         switch (href.substring(href.lastIndexOf("#") + 1)) {
             case "cancel":
                 cancel(wizard);
-                break;
-
-            case "finish":
-                finishStep(wizard, state);
                 break;
 
             case "next":
@@ -745,7 +741,7 @@
      */
     function refreshPagination(wizard, options, state) {
         if (options.enablePagination) {
-            var finish = wizard.find(".actions a[href$='#finish']").parent(),
+            var finish = wizard.find(".actions button[type$='submit']").parent(),
                 next = wizard.find(".actions a[href$='#next']").parent();
 
             if (!options.forceMoveForward) {
@@ -961,6 +957,7 @@
         if (options.enablePagination) {
             var pagination = "<{0} class=\"actions {1}\"><ul role=\"menu\" aria-label=\"{2}\">{3}</ul></{0}>",
                 buttonTemplate = "<li><a href=\"#{0}\" role=\"menuitem\">{1}</a></li>",
+                buttonSubmit = "<li><button type='submit' class='button submitBtn'>Submit</li>",
                 buttons = "";
 
             if (!options.forceMoveForward) {
@@ -970,7 +967,7 @@
             buttons += buttonTemplate.format("next", options.labels.next);
 
             if (options.enableFinishButton) {
-                buttons += buttonTemplate.format("finish", options.labels.finish);
+                buttons += buttonSubmit.format("finish", options.labels.finish);
             }
 
             if (options.enableCancelButton) {

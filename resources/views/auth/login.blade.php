@@ -23,6 +23,7 @@
                     {{session('gagal')}}
                 </div>
                 @endif
+
                 <div class="inner">
                     <div class="image-holder">
                         <img src="{!!asset('authentication/images/form-wizard-1.jpg')!!}">
@@ -33,10 +34,10 @@
                         </div>
                         <div class="form-row">
                             <div class="form-holder">
-                                <input type="text" name="email" placeholder="Email" class="form-control">
+                                <input type="text" name="email" placeholder="Email" class="form-control" required>
                             </div>
                             <div class="form-holder">
-                                <input type="password" name="pass" placeholder="Password" class="form-control">
+                                <input type="password" name="pass" placeholder="Password" class="form-control" required>
                             </div>
                         </div>
                         <button type="submit" class="button submitBtn">Login</button>

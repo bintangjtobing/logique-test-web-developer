@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -32,6 +33,16 @@ class authController extends Controller
     }
     public function processRegister(Request $request)
     {
-        return $request->all();
+        $newUser = new User;
+        $newUser->name = $request->firstName . $request->lastName;
+        $newUser->email = $request->email;
+        $newUser->address = $request->address;
+        $newUser->password = Hash::make($request->password);
+        $newUser->birth = $request->birth;
+        $newUser->membership = $request->membership;
+        $newUser->creditCard = $request->creditCard;
+        $newUser->save();
+
+        return back()->with('sukses', 'Register is successfull, please login.');
     }
 }

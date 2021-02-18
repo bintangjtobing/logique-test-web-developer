@@ -85,7 +85,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Welcome to test!
+                Welcome to test,<br> {{session()->get('name')}}!
             </div>
 
             <div class="links">

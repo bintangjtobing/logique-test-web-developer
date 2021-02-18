@@ -594,6 +594,7 @@ textarea.form-control {
     cursor: pointer;
     position: relative;
     padding-left: 28px;
+    margin-left: 30px;
     padding: 0;
 }
 
@@ -603,4 +604,16 @@ textarea.form-control {
     color: #fff;
     border-radius: .25rem;
     margin-bottom: .75rem;
+}
+
+.alert-success {
+    padding: 10px 10px 10px 10px;
+    background: #acde5a;
+    color: #51652f;
+    border-radius: .25rem;
+    margin-bottom: .75rem;
+}
+
+.form-row .form-holdersingle {
+    width: 100%;
 }
